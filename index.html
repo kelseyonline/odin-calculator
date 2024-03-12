@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
 <body>
+<h1 class="hero">ODIN CALCULATOR</h1>
 <div class="body">
     <div class="screen"></div>
-    <div class="row">
-        <button class="calc-button" id="clear">C</button>
-        <button class="calc-button" id="divide">&divide;</button>
+    <div class="buttons">
+        <div class="row" id="top-row">
+            <button class="calc-button" id="clear">C</button>
+            <button class="calc-button" id="backspace">&larr;</button>
+            <button class="calc-button" id="divide">&divide;</button>
+        </div>
+        <div class="row">
+            <button class="calc-button">7</button>
+            <button class="calc-button">8</button>
+            <button class="calc-button">9</button>
+            <button class="calc-button" id="multiply">&times;</button>
+        </div>
+        <div class="row">
+            <button class="calc-button">4</button>
+            <button class="calc-button">5</button>
+            <button class="calc-button">6</button>
+            <button class="calc-button" id="subtract">&minus;</button>
+        </div>
+        <div class="row">
+            <button class="calc-button">1</button>
+            <button class="calc-button">2</button>
+            <button class="calc-button">3</button>
+            <button class="calc-button" id="add">&plus;</button>
+        </div>
+        <div class="row" id="bottom-row">
+            <button class="calc-button">0</button>
+            <button class="calc-button" id="decimal">.</button>
+            <button class="calc-button" id="equals">=</button>
+        </div>
     </div>
-    <div class="row">
-        <button class="calc-button">7</button>
-        <button class="calc-button">8</button>
-        <button class="calc-button">9</button>
-        <button class="calc-button" id="mulitply">&times;</button>
-    </div>
-    <div class="row">
-        <button class="calc-button">4</button>
-        <button class="calc-button">5</button>
-        <button class="calc-button">6</button>
-        <button class="calc-button" id="subtract">&minus;</button>
-    </div>
-    <div class="row">
-        <button class="calc-button">1</button>
-        <button class="calc-button">2</button>
-        <button class="calc-button">3</button>
-        <button class="calc-button" id="add">&plus;</button>
-    </div>
-    <div class="row">
-        <button class="calc-button">0</button>
-        <button class="calc-button" id="decimal">.</button>
-        <button class="calc-button id="equals">=</button>
-    </div>
-</div>    
+</div>
+<footer>MADE BY @KELSEYONLINE ON GITHUB</footer>   
 <!-- Add a script to play Pocket Calculator if you really love yourself-->
 <script src="script.js"></script>
 </body>
