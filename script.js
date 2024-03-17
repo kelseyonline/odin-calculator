@@ -38,7 +38,7 @@ let newChar;
 let numArray1 = [];
 let numArray2 = [];
 let concatenatedArray1;
-let concatenatedArray2
+let concatenatedArray2;
 let operatorAlreadyClicked = false;
 
 function concatChar() {
@@ -48,6 +48,7 @@ function concatChar() {
         numArray1.push(newChar);
         concatenatedArray1 = numArray1.join('').toString();
         n1 = parseFloat(concatenatedArray1);
+        displayValue.textContent = n1;
         console.log("n1 is" + concatenatedArray1);
         console.log("n2 is" + concatenatedArray2);
     }
@@ -55,6 +56,7 @@ function concatChar() {
         numArray2.push(newChar);
         concatenatedArray2 = numArray2.join('').toString();
         n2 = parseFloat(concatenatedArray2);
+        displayValue.textContent = n1 + newOperator + n2;
         console.log("n1 is" + concatenatedArray1);
         console.log("n2 is" + concatenatedArray2);
     }
@@ -63,7 +65,42 @@ function concatChar() {
 // Add functionality to clear button
     // MAKE SURE THAT WHEN YOU PRESS CLEAR, LITERALLY EVERYTHING IS CLEARED!! INCLUDING ALL VARIABLES
 
+function clearCalculator() {
+    numArray1 = [];
+    numArray2 = [];
+    concatenatedArray1 = null;
+    concatenatedArray2 = null;
+    operatorAlreadyClicked = false;
+    decimalAlreadyClicked = false;
+    value = 0; 
+    n1 = null;
+    newOperator = null; 
+    n2 = null;
+    solution = null;
+    console.log("n1 is" + concatenatedArray1);
+    console.log("n2 is" + concatenatedArray2);
+    displayValue.textContent = 0;
+}
+
 // Add functionality to backspace button
+function backspace() { 
+        if (!operatorAlreadyClicked){
+            numArray1.pop();
+            concatenatedArray1 = numArray1.join('').toString();
+            n1 = parseFloat(concatenatedArray1);
+            displayValue.textContent = n1;
+            console.log("n1 is" + concatenatedArray1);
+            console.log("n2 is" + concatenatedArray2);
+        }
+        else {
+            numArray2.pop();
+            concatenatedArray2 = numArray2.join('').toString();
+            n2 = parseFloat(concatenatedArray2);
+            displayValue.textContent = n1 + newOperator + n2;
+            console.log("n1 is" + concatenatedArray1);
+            console.log("n2 is" + concatenatedArray2);
+        }
+}
 
 // Add functionality to operators (no evaluations, just adding to screen)
 
@@ -73,6 +110,7 @@ function getNewOperator() {
     newOperator = event.target.innerText;
     operatorAlreadyClicked = true;
     decimalAlreadyClicked = false;
+    displayValue.textContent = n1 + newOperator;
     console.log(operatorAlreadyClicked);
     console.log("newOperator =" + " " + newOperator);
 }
@@ -122,6 +160,12 @@ function operate(newOperator) {
         }
     }
 
-    solution = solution.toFixed(4);
+    if (Number.isInteger(solution)){
+        displayValue.textContent = solution;
+    }
+    else {
+        displayValue.textContent = solution.toFixed(4);
+    }
+
     console.log("Solution: " + solution);
 }
